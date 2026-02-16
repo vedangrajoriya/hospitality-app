@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hospitality Management Design System
+   Inspired by luxury hotel aesthetics - elegant, warm, and inviting
+*/
+
+@layer base {
+  :root {
+    /* Core palette - Warm luxury hotel theme */
+    --background: 40 33% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    /* Primary - Deep Navy Blue */
+    --primary: 220 50% 20%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Secondary - Warm Cream */
+    --secondary: 40 30% 94%;
+    --secondary-foreground: 220 20% 15%;
+
+    /* Muted - Soft gray */
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Warm Gold */
+    --accent: 40 70% 50%;
+    --accent-foreground: 220 50% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 220 50% 20%;
+
+    --radius: 0.5rem;
+
+    /* Custom hospitality tokens */
+    --gold: 40 70% 50%;
+    --gold-light: 40 60% 70%;
+    --gold-dark: 40 80% 35%;
+    --navy: 220 50% 20%;
+    --navy-light: 220 40% 35%;
+    --cream: 40 33% 98%;
+    --cream-dark: 40 25% 90%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 50% 15%) 0%, hsl(220 40% 25%) 50%, hsl(220 35% 35%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 70% 50%) 0%, hsl(35 75% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 30% 97%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(220 20% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(220 20% 15% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(220 20% 15% / 0.18);
+    --shadow-gold: 0 8px 30px -8px hsl(40 70% 50% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 220 50% 18%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 40 70% 50%;
+    --sidebar-primary-foreground: 220 50% 15%;
+    --sidebar-accent: 220 40% 25%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 220 40% 25%;
+    --sidebar-ring: 40 70% 50%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 30% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 30% 12%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 40 70% 55%;
+    --primary-foreground: 220 30% 10%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 40 70% 55%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 40 70% 55%;
+
+    --sidebar-background: 220 30% 6%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 40 70% 55%;
+    --sidebar-primary-foreground: 220 30% 10%;
+    --sidebar-accent: 220 25% 15%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 25% 15%;
+    --sidebar-ring: 40 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(40 70% 50%) 0%, hsl(35 75% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
