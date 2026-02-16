@@ -52,7 +52,7 @@ const AdminLogin = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    
+
     if (!formData.email || !formData.password) {
       setError('Please fill in all fields');
       return;
@@ -200,9 +200,9 @@ const AdminLogin = () => {
                 </div>
               </div>
 
-              <Button 
-                type="submit" 
-                className="w-full" 
+              <Button
+                type="submit"
+                className="w-full"
                 size="lg"
                 disabled={isLoading}
               >
@@ -210,12 +210,7 @@ const AdminLogin = () => {
               </Button>
             </form>
 
-            <div className="mt-6 p-4 bg-muted rounded-lg">
-              <p className="text-xs text-muted-foreground">
-                <strong>Demo Admin Credentials:</strong><br/>
-                Email: <code className="bg-background px-2 py-1 rounded">admin@haven.com</code>
-              </p>
-            </div>
+
           </div>
         </div>
       </main>
