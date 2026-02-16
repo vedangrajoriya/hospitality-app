@@ -64,7 +64,7 @@ src/
 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-org/hospitality-app.git
+git clone https://github.com/vedangrajoriya/hospitality-app
 cd hospitality-app
 ```
 
