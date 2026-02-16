@@ -1,2 +1,42 @@
-node_modules
+# Node
+
+node_modules/
+
+# Build
+
+/dist
+/.vite
+
+# Environment variables
+
 .env
+
+# Logs
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor configs
+
+.vscode/
+.idea/
+*.swp
+
+# OS
+
+.DS_Store
+Thumbs.db
+
+# Test coverage
+
+coverage/
+
+# TypeScript
+
+*.tsbuildinfo
+
+# Misc
+
+*.log
+*.cache
