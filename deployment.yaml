@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hospitality-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hospitality
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: hospitality
+    spec:
+      containers:
+        - name: frontend
+          image: hospitality-app:latest
+          ports:
+            - containerPort: 81
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 81
+            initialDelaySeconds: 5
+            periodSeconds: 10
