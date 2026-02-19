@@ -1,9 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hospitality-frontend
-  labels:
-    app: hospitality
+  name: hospitality-app
 spec:
   replicas: 2
   selector:
@@ -21,31 +19,12 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: hospitality-frontend:latest
-          imagePullPolicy: IfNotPresent
+          image: your_dockerhub_username/hospitality-app:latest
           ports:
-            - containerPort: 80
-              name: http
+            - containerPort: 81
           readinessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 81
             initialDelaySeconds: 5
             periodSeconds: 10
-            timeoutSeconds: 3
-            failureThreshold: 3
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-            initialDelaySeconds: 15
-            periodSeconds: 20
-            timeoutSeconds: 3
-            failureThreshold: 3
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "100m"
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
