@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: your_dockerhub_username/hospitality-app:latest
+          image: vedangrajoriya31/hospitality-app:latest
           ports:
             - containerPort: 81
           readinessProbe:
