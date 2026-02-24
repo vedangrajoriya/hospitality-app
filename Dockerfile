@@ -1,14 +1,30 @@
-# Stage 1: Build React app using Vite
-FROM node:18 AS build
+# ---------- Build Stage ----------
+FROM node:18 as build
+
 WORKDIR /app
-COPY package.json bun.lockb ./
+
+COPY package*.json ./
 RUN npm install
+
 COPY . .
+
+# Build arguments for Vite
+ARG VITE_SUPABASE_PROJECT_ID
+ARG VITE_SUPABASE_PUBLISHABLE_KEY
+ARG VITE_SUPABASE_URL
+
+# Set environment variables
+ENV VITE_SUPABASE_PROJECT_ID=$VITE_SUPABASE_PROJECT_ID
+ENV VITE_SUPABASE_PUBLISHABLE_KEY=$VITE_SUPABASE_PUBLISHABLE_KEY
+ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
+
 RUN npm run build
 
-# Stage 2: Serve with Nginx
+# ---------- Production Stage ----------
 FROM nginx:alpine
+
 COPY --from=build /app/dist /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
