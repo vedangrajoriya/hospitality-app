@@ -18,7 +18,7 @@ export function CTASection() {
             <span className="block text-gradient-gold">Luxury Living?</span>
           </h2>
           <p className="text-cream/70 text-lg mb-10 max-w-xl mx-auto">
-            Book your stay today and discover why Haven Hotel has been the destination of choice for discerning travelers worldwide.
+            Book your stay today and discover why Haven Hotel has been the destination of choice for discerning travelers worldwide. Travel in style, comfort, and elegance with us.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
