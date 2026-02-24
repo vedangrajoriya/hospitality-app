@@ -7,7 +7,9 @@ node_modules/
 /dist
 /.vite
 
-
+# Environment variables
+.env
+.env.local
 
 # Logs
 
